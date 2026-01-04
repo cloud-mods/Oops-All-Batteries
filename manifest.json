@@ -1,0 +1,12 @@
+{
+  "$schema": "https://smapi.io/schemas/manifest.json",
+  //
+  "Name": "Oops! All Batteries", 
+  "Author": "TheBatteryBunch",
+  "Version": "0.0.0", 
+  "Description": "This is a brainrot oops-all-batteries crackmod. The dateables are battery gijinka twins.", 
+  "UniqueID": "TheBatteryBunch.Batteries",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}
