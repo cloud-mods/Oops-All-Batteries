@@ -1,6 +1,44 @@
 {
-    "Format": "2.8.0",
     "$schema": "https://smapi.io/schemas/content-patcher.json",
     "Changes": [
+        /*                                                                             
+ ▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄     ▄▄▄▄▄▄      ▄▄▄▄      ▄▄▄▄   ▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄      ▄▄▄▄   
+ ▀▀▀██▀▀▀  ██▀▀▀▀██   ▀▀██▀▀    ██▀▀▀▀█   ██▀▀▀▀█  ██▀▀▀▀▀▀  ██▀▀▀▀██  ▄█▀▀▀▀█  
+    ██     ██    ██     ██     ██        ██        ██        ██    ██  ██▄      
+    ██     ███████      ██     ██  ▄▄▄▄  ██  ▄▄▄▄  ███████   ███████    ▀████▄  
+    ██     ██  ▀██▄     ██     ██  ▀▀██  ██  ▀▀██  ██        ██  ▀██▄       ▀██ 
+    ██     ██    ██   ▄▄██▄▄    ██▄▄▄██   ██▄▄▄██  ██▄▄▄▄▄▄  ██    ██  █▄▄▄▄▄█▀ 
+    ▀▀     ▀▀    ▀▀▀  ▀▀▀▀▀▀      ▀▀▀▀      ▀▀▀▀   ▀▀▀▀▀▀▀▀  ▀▀    ▀▀▀  ▀▀▀▀▀   
+*/
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                //battery drinking reaction
+                "{{ModId}}_Trigger.BatteryAcidHeld": {
+                    "Id": "{{ModId}}_Trigger.BatteryAcidReaction",
+                    "Trigger": "mistyspring.ItemExtensions_OnBeingHeld",
+                    "Condition": "ITEM_ID Input {{ModId}}_Items.BatteryAcid",
+                    "Action": "",
+                    "MarkActionApplied": false,
+                },
+                "{{ModId}}_Trigger.BatteryAcidDrank": {
+                    "Id": "{{ModId}}_Trigger.BatteryAcidReaction",
+                    "Trigger": "spacechase0.SpaceCore_OnItemEaten",
+                    "Condition": "ITEM_ID Input {{ModId}}_Items.BatteryAcid",
+                    "Action": "Spiderbuttons.BETAS_Explode, Spiderbuttons.BETAS_FadeToBlack 1000, IncrementStat {{ModId}}_Stat.BatteryAcidsDrank 1, Spiderbuttons.BETAS_DelayedAction 1200, Spiderbuttons.BETAS_Jump Farmer 10, Spiderbuttons.BETAS_EmoteFarmer HITC_Sick,",
+                    "MarkActionApplied": false,
+                },
+            }
+        },
+        /*
+ ▄▄▄▄▄      ▄▄▄▄▄▄      ▄▄     ▄▄          ▄▄▄▄       ▄▄▄▄  
+ ██▀▀▀██    ▀▀██▀▀     ████    ██         ██▀▀██    ██▀▀▀▀█ 
+ ██    ██     ██       ████    ██        ██    ██  ██       
+ ██    ██     ██      ██  ██   ██        ██    ██  ██  ▄▄▄▄ 
+ ██    ██     ██      ██████   ██        ██    ██  ██  ▀▀██ 
+ ██▄▄▄██    ▄▄██▄▄   ▄██  ██▄  ██▄▄▄▄▄▄   ██▄▄██    ██▄▄▄██ 
+ ▀▀▀▀▀      ▀▀▀▀▀▀   ▀▀    ▀▀  ▀▀▀▀▀▀▀▀    ▀▀▀▀       ▀▀▀▀  
+ */
     ]
 }
