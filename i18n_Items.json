@@ -1,0 +1,9 @@
+{
+  "$schema": "https://smapi.io/schemas/i18n.json",
+  "i18n_Items.BatteryAcid_RecipeName": "Battery Acid",
+  "i18n_Items.BatteryAcid_Name": "Battery Acid",
+  "i18n_Items.BatteryAcid_Desc": "You probably shouldn't drink this. But hey, you downloaded this mod. Weirdo.",
+  "i18n_Items.BatteryAcid_Question": "..really? you wanna drink the {0}?",
+  "i18n_Items.BatteryAcid_AnswerYes": "hell yeah +",
+  "i18n_Items.BatteryAcid_AnswerNo": "...okay maybe not",
+}
