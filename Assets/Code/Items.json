@@ -1,5 +1,4 @@
 {
-  "Format": "2.8.0",
   "$schema": "https://smapi.io/schemas/content-patcher.json",
   "Changes": [
     {
@@ -7,18 +6,21 @@
       "Target": "{{ModId}}/Food",
       "FromFile": "Assets//Food.png"
     },
+    //============//
+    //BATTERY ACID//
+    //============//
     {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
-        "{{ModId}}_BatteryAcid": {
-          "DisplayName": "Battery Acid",
-          "Description": "You probably shouldn't drink this.",
+        "{{ModId}}_Items.BatteryAcid": {
+          "DisplayName": "{{i18n: i18n_Items.BatteryAcid_Name}}",
+          "Description": "{{i18n: i18n_Items.BatteryAcid_Desc}}",
           "Type": "Cooking",
           "Category": -7,
           "Price": 525,
           "Texture": "{{ModId}}/Food",
-          "SpriteIndex": _______,
+          "SpriteIndex": 1,
           "ColorOverlayFromNextIndex": false,
           "Edibility": 40,
           "IsDrink": true,
@@ -74,8 +76,79 @@
           "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": null,
-          "CustomFields": null
+          "CustomFields": {
+            "mistyspring.ItemExtensions/LightData": "3 #66FF00", //it should glow a neon green
+          }
         },
+      }
+    },
+    /*
+ ▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄     ▄▄▄▄    ▄▄▄▄▄▄   ▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄    ▄▄▄▄   
+ ██▀▀▀▀██  ██▀▀▀▀▀▀   ██▀▀▀▀█   ▀▀██▀▀   ██▀▀▀▀█▄  ██▀▀▀▀▀▀  ▄█▀▀▀▀█  
+ ██    ██  ██        ██▀          ██     ██    ██  ██        ██▄      
+ ███████   ███████   ██           ██     ██████▀   ███████    ▀████▄  
+ ██  ▀██▄  ██        ██▄          ██     ██        ██             ▀██ 
+ ██    ██  ██▄▄▄▄▄▄   ██▄▄▄▄█   ▄▄██▄▄   ██        ██▄▄▄▄▄▄  █▄▄▄▄▄█▀ 
+ ▀▀    ▀▀▀ ▀▀▀▀▀▀▀▀     ▀▀▀▀    ▀▀▀▀▀▀   ▀▀        ▀▀▀▀▀▀▀▀   ▀▀▀▀▀   
+*/
+    {
+      "LogName": "Adding Recipes",
+      "Action": "EditData",
+      "Target": "Data/CookingRecipes",
+      "Entries": {
+        "{{ModId}}_BatteryAcid_Recipe": "787 1 167 2/10 10/{{ModId}}_Items.BatteryAcid 4/default/{{i18n: i18n_Items.BatteryAcid_Recipe}}",
+      }
+    },
+    /*
+    ▄▄▄▄    ▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄            ▄▄▄▄▄▄▄▄     ▄▄       ▄▄▄▄    ▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄    ▄▄▄▄   
+  ██▀▀▀▀█   ▀▀██▀▀   ██▀▀▀▀▀▀  ▀▀▀██▀▀▀            ▀▀▀██▀▀▀    ████    ▄█▀▀▀▀█   ▀▀▀██▀▀▀  ██▀▀▀▀▀▀  ▄█▀▀▀▀█  
+ ██           ██     ██           ██                  ██       ████    ██▄          ██     ██        ██▄      
+ ██  ▄▄▄▄     ██     ███████      ██                  ██      ██  ██    ▀████▄      ██     ███████    ▀████▄  
+ ██  ▀▀██     ██     ██           ██                  ██      ██████        ▀██     ██     ██             ▀██ 
+  ██▄▄▄██   ▄▄██▄▄   ██           ██                  ██     ▄██  ██▄  █▄▄▄▄▄█▀     ██     ██▄▄▄▄▄▄  █▄▄▄▄▄█▀ 
+    ▀▀▀▀    ▀▀▀▀▀▀   ▀▀           ▀▀                  ▀▀     ▀▀    ▀▀   ▀▀▀▀▀       ▀▀     ▀▀▀▀▀▀▀▀   ▀▀▀▀▀   
+*/
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "TextOperations": [
+        {
+          "Operation": "Append",
+          "Target": [
+            "Entries",
+            "Universal_Hate"
+          ],
+          "Value": "{{ModId}}_Items.BatteryAcid"
+        }
+      ]
+    },
+    /*
+ ▄▄▄  ▄▄▄    ▄▄▄▄    ▄▄▄▄▄               ▄▄▄▄▄▄▄▄  ▄▄▄  ▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄▄   ▄▄    ▄▄▄▄     ▄▄▄▄▄▄     ▄▄▄▄    ▄▄▄   ▄▄    ▄▄▄▄   
+ ███  ███   ██▀▀██   ██▀▀▀██             ██▀▀▀▀▀▀   ██▄▄██   ▀▀▀██▀▀▀  ██▀▀▀▀▀▀  ███   ██  ▄█▀▀▀▀█    ▀▀██▀▀    ██▀▀██   ███   ██  ▄█▀▀▀▀█  
+ ████████  ██    ██  ██    ██            ██          ████       ██     ██        ██▀█  ██  ██▄          ██     ██    ██  ██▀█  ██  ██▄      
+ ██ ██ ██  ██    ██  ██    ██            ███████      ██        ██     ███████   ██ ██ ██   ▀████▄      ██     ██    ██  ██ ██ ██   ▀████▄  
+ ██ ▀▀ ██  ██    ██  ██    ██            ██          ████       ██     ██        ██  █▄██       ▀██     ██     ██    ██  ██  █▄██       ▀██ 
+ ██    ██   ██▄▄██   ██▄▄▄██             ██▄▄▄▄▄▄   ██  ██      ██     ██▄▄▄▄▄▄  ██   ███  █▄▄▄▄▄█▀   ▄▄██▄▄    ██▄▄██   ██   ███  █▄▄▄▄▄█▀ 
+ ▀▀    ▀▀    ▀▀▀▀    ▀▀▀▀▀               ▀▀▀▀▀▀▀▀  ▀▀▀  ▀▀▀     ▀▀     ▀▀▀▀▀▀▀▀  ▀▀   ▀▀▀   ▀▀▀▀▀     ▀▀▀▀▀▀     ▀▀▀▀    ▀▀   ▀▀▀   ▀▀▀▀▀   
+    */
+    /* spacecore shit
+    {
+      "Action": "EditData",
+      "Target": "spacechase0.SpaceCore/ObjectExtensionData",
+      "Entries": {}
+    },
+    */
+    {
+      "Action": "EditData",
+      "Target": "Mods/mistyspring.ItemExtensions/Data",
+      "Entries": {
+        "{{ModId}}_Items.BatteryAcid": {
+          "FoodDialogue": {
+            "ConsumeQuestion": "{{i18n: i18n_Items.BatteryAcid_Question}}",
+            "Yes": "{{i18n: i18n_Items.BatteryAcid_AnswerYes}}",
+            "No": "{{i18n: i18n_Items.BatteryAcid_AnswerNo}}"
+          }
+        }
       }
     },
   ]
