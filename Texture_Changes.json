@@ -1,0 +1,29 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Changes": [
+    //=======//
+    //CURSORS//
+    //=======//
+    {
+      "Action": "EditImage",
+      "When": {
+        "Cursors": true
+      },
+      "Target": "LooseSprites/Cursors",
+      "FromFile": "Cursors/Cursors.png",
+      "FromArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 128,
+        "Height": 32
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 0,
+        "Width": 128,
+        "Height": 32
+      },
+      "PatchMode": "Replace",
+    },
+  ]
+}
