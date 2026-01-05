@@ -1,0 +1,99 @@
+{
+    //THE ONLY THING(S) THAT SHOULD BE ADDED/EDITED TO THIS FILE IS CONFIG, TOKENS, AND INCLUDE PATCHES
+    "Format": "2.8.0",
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    /*
+    ▄▄▄▄     ▄▄▄▄    ▄▄▄   ▄▄  ▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄      ▄▄▄▄  
+  ██▀▀▀▀█   ██▀▀██   ███   ██  ██▀▀▀▀▀▀   ▀▀██▀▀    ██▀▀▀▀█ 
+ ██▀       ██    ██  ██▀█  ██  ██           ██     ██       
+ ██        ██    ██  ██ ██ ██  ███████      ██     ██  ▄▄▄▄ 
+ ██▄       ██    ██  ██  █▄██  ██           ██     ██  ▀▀██ 
+  ██▄▄▄▄█   ██▄▄██   ██   ███  ██         ▄▄██▄▄    ██▄▄▄██ 
+    ▀▀▀▀     ▀▀▀▀    ▀▀   ▀▀▀  ▀▀         ▀▀▀▀▀▀      ▀▀▀▀  
+*/
+    "ConfigSchema": {
+        // Retextures section
+        "Cursors": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Replace the game's cursors with BATTERY CURSORS.",
+            "Section": "Retextures"
+        },
+        // Gameplay section
+        "FunBatteryAcid": {
+            "AllowValues": "true, false",
+            "Default": "true",
+            "Description": "Makes consuming battery-related beverages more... interesting.",
+            "Section": "Gameplay"
+        },
+    },
+    /*
+ ▄▄▄▄▄▄▄▄    ▄▄▄▄    ▄▄   ▄▄▄  ▄▄▄▄▄▄▄▄  ▄▄▄   ▄▄    ▄▄▄▄   
+ ▀▀▀██▀▀▀   ██▀▀██   ██  ██▀   ██▀▀▀▀▀▀  ███   ██  ▄█▀▀▀▀█  
+    ██     ██    ██  ██▄██     ██        ██▀█  ██  ██▄      
+    ██     ██    ██  █████     ███████   ██ ██ ██   ▀████▄  
+    ██     ██    ██  ██  ██▄   ██        ██  █▄██       ▀██ 
+    ██      ██▄▄██   ██   ██▄  ██▄▄▄▄▄▄  ██   ███  █▄▄▄▄▄█▀ 
+    ▀▀       ▀▀▀▀    ▀▀    ▀▀  ▀▀▀▀▀▀▀▀  ▀▀   ▀▀▀   ▀▀▀▀▀   
+*/
+    "DynamicTokens": [],
+    "Changes": [
+        /*
+  ▄▄▄▄▄▄   ▄▄▄   ▄▄     ▄▄▄▄   ▄▄        ▄▄    ▄▄  ▄▄▄▄▄     ▄▄▄▄▄▄▄▄ 
+  ▀▀██▀▀   ███   ██   ██▀▀▀▀█  ██        ██    ██  ██▀▀▀██   ██▀▀▀▀▀▀ 
+    ██     ██▀█  ██  ██▀       ██        ██    ██  ██    ██  ██       
+    ██     ██ ██ ██  ██        ██        ██    ██  ██    ██  ███████  
+    ██     ██  █▄██  ██▄       ██        ██    ██  ██    ██  ██       
+  ▄▄██▄▄   ██   ███   ██▄▄▄▄█  ██▄▄▄▄▄▄  ▀██▄▄██▀  ██▄▄▄██   ██▄▄▄▄▄▄ 
+  ▀▀▀▀▀▀   ▀▀   ▀▀▀     ▀▀▀▀   ▀▀▀▀▀▀▀▀    ▀▀▀▀    ▀▀▀▀▀     ▀▀▀▀▀▀▀▀ 
+*/
+        //=================//
+        //CIRCUS'S EXHIBITS//
+        //=================//
+        { //ITEMS CODE
+            "LogName": "Batteries - Items",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Items.json"
+        },
+        { //BATTERY-CHAN CODE
+            "LogName": "Batteries - Battery-Chan",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Battery_Chan.json"
+        },
+        { //BATTERY-KUN CODE
+            "LogName": "Batteries - Battery-Kun",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Battery_Kun.json"
+        },
+        //===============//
+        //CIRCUS'S CLOWNS//
+        //===============//
+        { //FALLSPICE'S CODE
+            "LogName": "Batteries - Fallspice",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Fallspice.json"
+        },
+        { //CLAUDE'S CODE
+            "LogName": "Batteries - HeadInTheClouds",
+            "Action": "Include",
+            "FromFile": "Assets/Code/HeadInTheClouds.json"
+        },
+        { //CARACAL'S CODE
+            "LogName": "Batteries - Caracal",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Caracal.json"
+        },
+        { //TEXTURE CHANGES CODE
+            "LogName": "Batteries - Texture Changes",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Texture_Changes.json"
+        },
+        /* thingy to yoink if someone new joins:
+    { //____'S CODE
+      "LogName": "Batteries - _____",
+      "Action": "Include",
+      "FromFile": "Assets/Code/_____.json"
+    },
+    */
+    ]
+}
