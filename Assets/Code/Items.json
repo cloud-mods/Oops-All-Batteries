@@ -4,7 +4,7 @@
     {
       "Action": "Load",
       "Target": "{{ModId}}/Food",
-      "FromFile": "Assets//Food.png"
+      "FromFile": "Assets/Images/Food.png"
     },
     //============//
     //BATTERY ACID//
@@ -142,7 +142,7 @@
       "Action": "EditData",
       "Target": "Mods/mistyspring.ItemExtensions/Data",
       "Entries": {
-        "{{ModId}}_Items.BatteryAcid": {
+        "(O){{ModId}}_Items.BatteryAcid": {
           "FoodDialogue": {
             "ConsumeQuestion": "{{i18n: i18n_Items.BatteryAcid_Question}}",
             "Yes": "{{i18n: i18n_Items.BatteryAcid_AnswerYes}}",
