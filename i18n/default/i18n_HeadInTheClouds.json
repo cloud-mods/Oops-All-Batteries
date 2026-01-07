@@ -9,7 +9,6 @@
  ██▄▄▄▄██  ▄██  ██▄     ██        ██     ██▄▄▄▄▄▄  ██    ██     ██               ▄██  ██▄   ██▄▄▄▄█   ▄▄██▄▄   ██▄▄▄██  
  ▀▀▀▀▀▀▀   ▀▀    ▀▀     ▀▀        ▀▀     ▀▀▀▀▀▀▀▀  ▀▀    ▀▀▀    ▀▀               ▀▀    ▀▀     ▀▀▀▀    ▀▀▀▀▀▀   ▀▀▀▀▀    
 */
-  "i18n_HITC.BatteryAcidReaction.Krobus_Under4H": "",
-  "i18n_HITC.BatteryAcidReaction.Krobus_Over4H": "",
+  "i18n_HITC.BatteryAcidReaction.Qi": "Well kid... you're certainly a special one.",
 
 }
