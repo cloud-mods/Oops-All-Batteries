@@ -10,23 +10,69 @@
     ██     ██    ██   ▄▄██▄▄    ██▄▄▄██   ██▄▄▄██  ██▄▄▄▄▄▄  ██    ██  █▄▄▄▄▄█▀ 
     ▀▀     ▀▀    ▀▀▀  ▀▀▀▀▀▀      ▀▀▀▀      ▀▀▀▀   ▀▀▀▀▀▀▀▀  ▀▀    ▀▀▀  ▀▀▀▀▀   
 */
-        {
+        { //trigger actions - knows QI
             "Action": "EditData",
             "Target": "Data/TriggerActions",
+            "When": {
+                "HasWalletItem": "ClubCard"
+            },
             "Entries": {
-                //battery drinking reaction
+                /* this bit sadly does not work
                 "{{ModId}}_Trigger.BatteryAcidHeld": {
-                    "Id": "{{ModId}}_Trigger.BatteryAcidReaction",
+                    "Id": "{{ModId}}_Trigger.BatteryAcidHeld",
                     "Trigger": "mistyspring.ItemExtensions_OnBeingHeld",
-                    "Condition": "ITEM_ID Input {{ModId}}_Items.BatteryAcid",
-                    "Action": "",
+                    "Condition": "ITEM_ID Input (O){{ModId}}_Items.BatteryAcid",
+                    "Action": "Spiderbuttons.BETAS_Lightning",
                     "MarkActionApplied": false,
                 },
+                */
                 "{{ModId}}_Trigger.BatteryAcidDrank": {
-                    "Id": "{{ModId}}_Trigger.BatteryAcidReaction",
+                    "Id": "{{ModId}}_Trigger.BatteryAcidDrank",
                     "Trigger": "spacechase0.SpaceCore_OnItemEaten",
-                    "Condition": "ITEM_ID Input {{ModId}}_Items.BatteryAcid",
-                    "Action": "Spiderbuttons.BETAS_Explode, Spiderbuttons.BETAS_FadeToBlack 1000, IncrementStat {{ModId}}_Stat.BatteryAcidsDrank 1, Spiderbuttons.BETAS_DelayedAction 1200, Spiderbuttons.BETAS_Jump Farmer 10, Spiderbuttons.BETAS_EmoteFarmer HITC_Sick,",
+                    "Condition": "ITEM_ID Input (O){{ModId}}_Items.BatteryAcid",
+                    "Actions": [
+                        //   "Spiderbuttons.BETAS_FadeToBlack 100",
+                        "Spiderbuttons.BETAS_Explode",
+                        "IncrementStat {{ModId}}_Stat.BatteryAcidsDrank 1",
+                        "Spiderbuttons.BETAS_Jump Farmer 15",
+                        "Spiderbuttons.BETAS_ShakeNpc All 4000",
+                        "Spiderbuttons.BETAS_DialogueBox \"Mister Qi\" \"{{i18n: i18n_HITC.BatteryAcidReaction.Qi}}\"",
+                        //   "Spiderbuttons.BETAS_Jump Farmer 10",
+                        //   "Spiderbuttons.BETAS_DelayedAction Spiderbuttons.BETAS_EmoteFarmer HITC_Sick 1200",
+                    ],
+                    "MarkActionApplied": false,
+                },
+            }
+        },
+        { //trigger actions - DOES NOT KNOW QI
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "When": {
+                "HasWalletItem|contains=ClubCard": false
+            },
+            "Entries": {
+                //battery drinking reaction. Spiderbuttons.BETAS_Explode, 
+                /* this bit sadly does not work
+                "{{ModId}}_Trigger.BatteryAcidHeld": {
+                    "Id": "{{ModId}}_Trigger.BatteryAcidHeld",
+                    "Trigger": "mistyspring.ItemExtensions_OnBeingHeld",
+                    "Condition": "ITEM_ID Input (O){{ModId}}_Items.BatteryAcid",
+                    "Action": "Spiderbuttons.BETAS_Lightning",
+                    "MarkActionApplied": false,
+                },
+                */
+                "{{ModId}}_Trigger.BatteryAcidDrank": {
+                    "Id": "{{ModId}}_Trigger.BatteryAcidDrank",
+                    "Trigger": "spacechase0.SpaceCore_OnItemEaten",
+                    "Condition": "ITEM_ID Input (O){{ModId}}_Items.BatteryAcid",
+                    "Actions": [
+                        "Spiderbuttons.BETAS_Explode",
+                        "IncrementStat {{ModId}}_Stat.BatteryAcidsDrank 1",
+                        "Spiderbuttons.BETAS_Jump Farmer 15",
+                        "Spiderbuttons.BETAS_ShakeNpc All 4000",
+                        //   "Spiderbuttons.BETAS_Jump Farmer 10",
+                        //   "Spiderbuttons.BETAS_DelayedAction Spiderbuttons.BETAS_EmoteFarmer HITC_Sick 1200",
+                    ],
                     "MarkActionApplied": false,
                 },
             }
