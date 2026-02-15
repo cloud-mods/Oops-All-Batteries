@@ -10,7 +10,7 @@
         "Cursors": true
       },
       "Target": "LooseSprites/Cursors",
-      "FromFile": "Cursors/Cursors.png",
+      "FromFile": "Assets/Images/Cursors.png",
       "FromArea": {
         "X": 0,
         "Y": 0,
