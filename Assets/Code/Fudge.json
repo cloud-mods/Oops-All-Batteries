@@ -1,0 +1,103 @@
+{
+    "Format": "2.9.0",
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        /*
+    ▄▄▄▄▄▄▄▄  ▄▄    ▄▄  ▄▄▄▄▄▄    ▄▄▄   ▄▄   ▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄  ▄▄    ▄▄  ▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄ 
+    ██▀▀▀▀▀▀  ██    ██  ██▀▀▀▀██  ███   ██   ▀▀██▀▀   ▀▀▀██▀▀▀  ██    ██  ██▀▀▀▀██  ██▀▀▀▀▀▀ 
+    ██        ██    ██  ██    ██  ██▀█  ██     ██        ██     ██    ██  ██    ██  ██       
+    ███████   ██    ██  ███████   ██ ██ ██     ██        ██     ██    ██  ███████   ███████  
+    ██        ██    ██  ██  ▀██▄  ██  █▄██     ██        ██     ██    ██  ██  ▀██▄  ██       
+    ██        ▀██▄▄██▀  ██    ██  ██   ███   ▄▄██▄▄      ██     ▀██▄▄██▀  ██    ██  ██▄▄▄▄▄▄ 
+    ▀▀          ▀▀▀▀    ▀▀    ▀▀▀ ▀▀   ▀▀▀   ▀▀▀▀▀▀      ▀▀       ▀▀▀▀    ▀▀    ▀▀▀ ▀▀▀▀▀▀▀▀ 
+    */
+        //=====================================================================================================================================================//
+        //LOAD//
+        //=====================================================================================================================================================//
+        { //FURNITURE
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/{{Furniture_Sat}}",
+            "FromFile": "Assets/Images/Fudge/{{TargetWithoutPath}}.png",
+        },
+        { //FURNITURE FRONT
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/{{Furniture_Sat}}Front",
+            "FromFile": "Assets/Images/Fudge/{{TargetWithoutPath}}.png",
+        },
+        //=====================================================================================================================================================//
+        //EDIT DATA//
+        //=====================================================================================================================================================//
+        { //DATA/FURNITURE
+            "Action": "EditData",
+            "Target": "Data/Furniture",
+            "Entries": {
+                "{{ModId}}_chair1": "{{ModId}}_chair1/chair/-1/-1/4/600/-1/Chair 1/0/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_chair2": "{{ModId}}_chair2/chair/-1/-1/4/600/-1/Chair 2/3/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_chair3": "{{ModId}}_chair3/chair/-1/-1/4/600/-1/Chair 3/6/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_seat1": "{{ModId}}_seat1/chair/-1/-1/2/450/-1/Seat 1/9/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_seat2": "{{ModId}}_seat2/chair/-1/-1/2/450/-1/Seat 2/11/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_bedtable1": "{{ModId}}_bedtable1/table/1 2/1 1/4/600/-1/Bedtable 1/13/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_bedtable2": "{{ModId}}_bedtable2/table/1 2/1 1/4/600/-1/Bedtable 2/15/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_bedtable3": "{{ModId}}_bedtable3/table/1 2/1 1/4/600/-1/Bedtable 3/17/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_batterystandingbig": "{{ModId}}_batterystandingbig/decor/1 2/1 1/1/1000/-1/Battery Standing Big/19/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_armchair1": "{{ModId}}_armchair1/armchair/-1/-1/4/4000/-1/Armchair 1/40/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_armchair2": "{{ModId}}_armchair2/armchair/-1/-1/4/4000/-1/Armchair 2/46/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_junimoplush": "{{ModId}}_junimoplush/decor/2 2/2 1/1/1000/-1/Junimo Plush/52/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase1": "{{ModId}}_vase1/decor/1 2/1 1/1/300/-1/Vase 1/54/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase2": "{{ModId}}_vase2/decor/1 2/1 1/1/300/-1/Vase 2/55/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase3": "{{ModId}}_vase3/decor/1 1/1 1/1/250/-1/Vase 3/76/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_shorts": "{{ModId}}_shorts/decor/1 1/1 1/1/10000/-1/Shorts/56/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_stardrop": "{{ModId}}_stardrop/decor/1 1/1 1/1/20000/-1/Stardrop/57/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_batterystandingsmall": "{{ModId}}_batterystandingsmall/decor/1 1/1 1/1/300/-1/Battery Standing Small/77/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_couch1": "{{ModId}}_couch1/couch/-1/-1/4/7000/-1/Couch 1/80/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_couch2": "{{ModId}}_couch2/couch/-1/-1/4/7000/-1/Couch 2/88/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_lamp1": "{{ModId}}_lamp1/lamp/1 3/1 1/1/900/-1/Lamp 1/96/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_fireplace": "{{ModId}}_fireplace/fireplace/-1/-1/1/8000/-1/fireplace/58/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_bench1": "{{ModId}}_bench1/bench/-1/-1/4/5000/-1/Bench 1/140/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_bench2": "{{ModId}}_bench2/bench/-1/-1/4/5000/-1/Bench 2/145/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_couch3": "{{ModId}}_couch3/couch/-1/-1/4/9000/-1/Couch 3/150/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_lamp2": "{{ModId}}_lamp2/lamp/-1/-1/1/900/-1/Lamp 2/158/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_dresser1": "{{ModId}}_dresser1/dresser/-1/-1/4/4000/-1/Dresser 1/200/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_dresser2": "{{ModId}}_dresser2/dresser/-1/-1/4/4000/-1/Dresser 2/205/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_dresser3": "{{ModId}}_dresser3/dresser/-1/-1/4/4000/-1/Dresser 3/210/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_dresser4": "{{ModId}}_dresser4/dresser/-1/-1/4/4000/-1/Dresser 4/215/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_singlebed": "{{ModId}}_singlebed/bed/2 4/2 3/1/3000/-1/Single Bed/260/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_doublebed": "{{ModId}}_doublebed/beddouble/3 4/3 3/1/10000/-1/Double Bed/264/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_childbed": "{{ModId}}_childbed/bedchild/2 4/2 3/1/3000/-1/Child Bed/260/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_singlebed2": "{{ModId}}_singlebed2/bed/2 4/2 3/1/3000/-1/Single Bed 2/270/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_doublebed2": "{{ModId}}_doublebed2/beddouble/3 4/3 3/1/10000/-1/Double Bed 2/274/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_childbed2": "{{ModId}}_childbed2/bedchild/2 4/2 3/1/3000/-1/Child Bed 2/270/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_table1": "{{ModId}}_table1/table/-1/-1/1/1500/-1/Square Table 1/340/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_table2": "{{ModId}}_table2/table/-1/-1/1/1500/-1/Square Table 2/342/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_table3": "{{ModId}}_table3/table/-1/-1/1/1500/-1/Square Table 3/344/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_table4": "{{ModId}}_table4/table/-1/-1/1/1500/-1/Square Table 4/346/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_krobbatterus1": "{{ModId}}_krobbatterus1/decor/1 3/1 1/1/30000/-1/Krobbatterus 1/348/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_krobbatterus2": "{{ModId}}_krobbatterus2/decor/1 3/1 1/1/30000/-1/Krobbatterus 2/349/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_catstatue1": "{{ModId}}_catstatue1/decor/1 3/1 1/1/20000/-1/Cat Statue 1/350/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_catstatue2": "{{ModId}}_catstatue2/decor/1 3/1 1/1/20000/-1/Cat Statue 2/351/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_catstatue3": "{{ModId}}_catstatue3/decor/1 3/1 1/1/20000/-1/Cat Statue 3/352/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_snakestatue1": "{{ModId}}_snakestatue1/decor/1 3/1 1/1/40000/-1/Snake Statue 1/353/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_snakestatue2": "{{ModId}}_snakestatue2/decor/1 3/1 1/1/40000/-1/Snake Statue 2/354/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                //
+                "{{ModId}}_vase4": "{{ModId}}_vase4/decor/1 2/1 1/1/350/-1/Vase 4/400/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase5": "{{ModId}}_vase5/decor/1 2/1 1/1/350/-1/Vase 5/401/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase6": "{{ModId}}_vase6/decor/1 2/1 1/1/350/-1/Vase 6/402/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase7": "{{ModId}}_vase7/decor/1 2/1 1/1/350/-1/Vase 7/403/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase8": "{{ModId}}_vase8/decor/1 2/1 1/1/350/-1/Vase 8/404/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_trashcan": "{{ModId}}_trashcan/decor/1 2/1 1/1/3000/-1/Trash Can/405/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_vase9": "{{ModId}}_vase9/decor/1 2/1 1/1/350/-1/Vase 9/406/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_batteryportrait1": "{{ModId}}_batteryportrait1/painting/2 2/2 2/1/2000/-1/Battery Portrait 1/407/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_batteryportrait2": "{{ModId}}_batteryportrait2/painting/2 2/2 2/1/2000/-1/Battery Portrait 2/409/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_batterytower": "{{ModId}}_batterytower/painting/2 2/2 2/1/2000/-1/Battery Tower/411/Mods\\{{ModId}}\\{{Furniture_Sat}}",
+                "{{ModId}}_column": "{{ModId}}_column/decor/1 4/1 1/1/6000/-1/Column/359/Mods\\{{ModId}}\\{{Furniture_Sat}}"
+            }
+        }
+    ]
+}
