@@ -19,6 +19,12 @@
             "Description": "Replace the game's cursors with BATTERY CURSORS.",
             "Section": "Retextures"
         },
+        "FurnitureSat": {
+            "AllowValues": "Normal, Desaturated",
+            "Default": "Normal",
+            "Description": "Determines whether the battery furniture should be normal, or desaturated.",
+            "Section": "Retextures"
+        },
         // Gameplay section
         "FunBatteryAcid": {
             "AllowValues": "true, false",
@@ -36,7 +42,23 @@
     ██      ██▄▄██   ██   ██▄  ██▄▄▄▄▄▄  ██   ███  █▄▄▄▄▄█▀ 
     ▀▀       ▀▀▀▀    ▀▀    ▀▀  ▀▀▀▀▀▀▀▀  ▀▀   ▀▀▀   ▀▀▀▀▀   
 */
-    "DynamicTokens": [],
+    "DynamicTokens": [
+        //--------------FURNITURE SATURATION--------------//
+        { //NORMAL
+            "Name": "Furniture_Sat",
+            "Value": "furniture-battery",
+            "When": {
+                "FurnitureSat": "Normal"
+            }
+        },
+        { //DESAT
+            "Name": "Furniture_Sat",
+            "Value": "furniture-battery-desat",
+            "When": {
+                "FurnitureSat": "Desaturated"
+            }
+        },
+    ],
     "Changes": [
         /*
   ▄▄▄▄▄▄   ▄▄▄   ▄▄     ▄▄▄▄   ▄▄        ▄▄    ▄▄  ▄▄▄▄▄     ▄▄▄▄▄▄▄▄ 
@@ -47,6 +69,17 @@
   ▄▄██▄▄   ██   ███   ██▄▄▄▄█  ██▄▄▄▄▄▄  ▀██▄▄██▀  ██▄▄▄██   ██▄▄▄▄▄▄ 
   ▀▀▀▀▀▀   ▀▀   ▀▀▀     ▀▀▀▀   ▀▀▀▀▀▀▀▀    ▀▀▀▀    ▀▀▀▀▀     ▀▀▀▀▀▀▀▀ 
 */
+        /* for future use
+        //=====//
+        //BLANK//
+        //=====//
+        {
+            "LogName": "Blank",
+            "Action": "Load",
+            "Target": "____/{{ModID}}",
+            "FromFile": "Blank.json",
+        },
+        */
         //=================//
         //CIRCUS'S EXHIBITS//
         //=================//
@@ -54,6 +87,11 @@
             "LogName": "Batteries - Items",
             "Action": "Include",
             "FromFile": "Assets/Code/Items.json"
+        },
+        { //TEXTURE CHANGES CODE
+            "LogName": "Batteries - Texture Changes",
+            "Action": "Include",
+            "FromFile": "Assets/Code/Texture_Changes.json"
         },
         { //BATTERY-CHAN CODE
             "LogName": "Batteries - Battery-Chan",
@@ -83,10 +121,10 @@
             "Action": "Include",
             "FromFile": "Assets/Code/Caracal.json"
         },
-        { //TEXTURE CHANGES CODE
-            "LogName": "Batteries - Texture Changes",
+        { //FUDGE'S CODE
+            "LogName": "Batteries - Fudge",
             "Action": "Include",
-            "FromFile": "Assets/Code/Texture_Changes.json"
+            "FromFile": "Assets/Code/Fudge.json"
         },
         /* thingy to yoink if someone new joins:
     { //____'S CODE

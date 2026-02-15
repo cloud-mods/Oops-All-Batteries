@@ -1,10 +1,10 @@
 {
   "$schema": "https://smapi.io/schemas/manifest.json",
   //
-  "Name": "Oops! All Batteries", 
+  "Name": "Oops! All Batteries",
   "Author": "TheBatteryBunch",
-  "Version": "0.1", 
-  "Description": "This is a brainrot oops-all-batteries crackmod. The dateables are battery gijinka twins.", 
+  "Version": "0.1.1",
+  "Description": "This is a brainrot oops-all-batteries crackmod. The dateables are battery gijinka twins.",
   "UniqueID": "TheBatteryBunch.Batteries",
   "ContentPackFor": {
     "UniqueID": "Pathoschild.ContentPatcher"
@@ -12,6 +12,10 @@
   "Dependencies": [
     {
       "UniqueID": "mistyspring.ItemExtensions",
+      "IsRequired": true
+    },
+    {
+      "UniqueID": "spacechase0.SpaceCore",
       "IsRequired": true
     }
   ]
